@@ -1,0 +1,40 @@
+
+<script>
+  function calculate() {
+
+    let operator = document.getElementById('operator').value;
+    let x = parseInt(document.getElementById('x').value);
+    let y = parseInt(document.getElementById('y').value);
+
+
+    let result;
+    if (operator == 'tambah') {
+      result = x + y;
+    } else if (operator == 'kurang') {
+      result = x - y;
+    } else if (operator == 'kali') {
+      result = x * y;
+    } else if (operator == 'divibagide') {
+      result = x / y;
+    }
+    document.getElementById('result').innerHTML = result;
+  }
+</script>
+
+<form onsubmit="calculate(); return false;">
+
+  <label>ANGKA 1:</label>
+  <input type="number" id="x"><br>
+  <label>ANGKA 2:</label>
+  <input type="number" id="y"><br>
+ 
+  <label>Operasi:</label>
+  <select id="operator">
+    <option value="tambah">+</option>
+    <option value="kurang">-</option>
+    <option value="kali">x</option>
+    <option value="bagi">/</option>
+  </select><br>
+  <input type="submit" value="Hitung">
+</form>
+<div id="result"></div>
